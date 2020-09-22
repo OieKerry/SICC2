@@ -1,0 +1,286 @@
+
+body{
+  background: #7FB3D5  ;
+  padding: 0;
+  margin: 0;
+}
+
+.slider{
+  position: relative;
+  top: 5%;
+  left: 10%;
+  width: 50%;
+  margin: auto;
+  overflow: hidden;
+
+}
+
+.slider ul{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 400%;
+  animation: cambio 20s infinite alternate;
+}
+.slider li{
+  width: 100%;
+  list-style: none;
+}
+.slider img{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+@keyframes cambio {
+      0% {margin-left: 0;}
+      20% {margin-left: 0;}
+
+      25% {margin-left: -100%;}
+      45% {margin-left: -100%;}
+
+      50% {margin-left: -200%;}
+      70% {margin-left: -200%;}
+
+      75% {margin-left: -300%;}
+      100% {margin-left: -300%;}
+}
+
+
+
+div{
+  width: auto;
+  height: auto;
+}
+.contenedorMenu{
+  position: absolute;
+  top: 25%;
+  left: 2%;
+
+
+
+
+}
+.botonMenu{
+  position: relative;
+  text-decoration: none;
+  left: 10%;
+  padding: 10px;
+  padding-left: 10%;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #1883ba;
+  border-radius: 10px;
+  border: 2px solid #0016b0;
+}
+
+.formulario{
+  left: 20%;
+  background: #FADBD8;
+    position: static;
+      top: 25%;
+      left: 25%;
+      width: 50%;
+      overflow: hidden;
+      border-radius: 20px;
+      margin: auto;
+
+}
+.contPersonal{
+
+  border-style: dashed;
+  width: 40%;
+  left: 5%;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 25px;
+  float: left;
+  left: 20%;
+  margin: auto
+
+}
+
+.contBombero{
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  float: right;
+  margin: auto
+}
+
+.logo{
+  width:100px;
+  height:100px;
+  border-radius:150px;
+  position: relative;
+  top: 50px;
+  border:5px solid #666;
+}
+
+.contBotones{
+  position: relative;
+
+
+}
+
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #1A5276;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.btnForm {
+  float: right;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #1A5276;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #21618C}
+
+.button:active {
+  background-color: #21618C;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+
+
+
+.contenedorInformacion{
+  position: relative;
+  border-style: dashed;
+  width: 60%;
+  left: 20%;
+  height: 70%;
+  background: #FADBD8;
+  text-align: center;
+
+
+}
+
+
+
+
+.div1{
+	position: absolute;
+  	top: 25%;
+  	left: 25%;
+  	width: 50%;
+  	margin: auto;
+  	overflow: hidden;
+    background: #FADBD8;
+  	border-radius: 20px;
+  	margin: auto;
+}
+
+.div2{
+	float: left;
+}
+
+.form1{
+	width: 180px;
+	height: 300px;
+	padding: 20px;
+	border: 2px solid black;
+	border-radius: 20px;
+	float: left;
+	left: 20%;
+	margin: auto;
+}
+
+.form2{
+	width: 180px;
+	height: 300px;
+	padding: 20px;
+	border: 2px solid black;
+	border-radius: 20px;
+	float: center;
+	margin: auto;
+}
+
+.form3{
+
+	width: 180px;
+	height: 300px;
+	padding: 20px;
+	border: 2px solid black;
+	float: right;
+	border-radius: 10px;
+	margin: auto;
+}
+
+
+.tablaUsuarios{
+  position: relative;
+  top: 50px;
+  width: 170px;
+  height: 100px;
+  margin: 100px;
+  padding: 10px;
+  float: left;
+  left: 30%;
+  background: #FADBD8;
+  border-radius: 20px;
+  margin: 1px;
+
+}
+.contenedorTablas{
+  width: 80%;
+  height: 70%;
+  background-color: white;
+  top: 100%;
+}
+
+
+.divC1{
+  width: 210px;
+  height: 310px;
+  padding: 20px;
+  border: 2px solid black;
+  float: left;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.divC2{
+  width: 210px;
+  height: 310px;
+  padding: 20px;
+  border: 2px solid black;
+  float: right;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.divC3{
+  width: 210px;
+  height: 310px;
+  padding: 20px;
+  border: 2px solid black;
+  float: center;
+  border-radius: 10px;
+  margin: auto;
+}
