@@ -1,13 +1,15 @@
 
 body{
-  background: #4081DF  ;
+  background: #7FB3D5  ;
   padding: 0;
   margin: 0;
 }
 
 .slider{
   position: relative;
-  width: 730px;
+  top: 5%;
+  left: 10%;
+  width: 50%;
   margin: auto;
   overflow: hidden;
 
@@ -54,8 +56,24 @@ div{
   position: absolute;
   top: 25%;
   left: 2%;
-}
 
+
+
+
+}
+.botonMenu{
+  position: relative;
+  text-decoration: none;
+  left: 10%;
+  padding: 10px;
+  padding-left: 10%;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #1883ba;
+  border-radius: 10px;
+  border: 2px solid #0016b0;
+}
 
 .formulario{
   left: 20%;
@@ -68,24 +86,7 @@ div{
       border-radius: 20px;
       margin: auto;
 
-
-
 }
-
-
-
-
-.formulario input {
-  border: 1px solid #CCC;
-  padding: 5px;
-}
-
-
-
-
-
-
-
 .contPersonal{
   border-style: dashed;
   width: 310px;
@@ -100,7 +101,7 @@ div{
 .contPersonal2{
   position: relative;
   border-style: dashed;
-  width: 300px;
+  width: 316px;
   float: left;
   left: -2%;
   top: -1%;
@@ -109,21 +110,6 @@ div{
   border-radius: 25px;
   margin: 3px;
 }
-
-.contPersonal2 .input-info {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
 .contPersonal3{
   position: relative;
   border-style: dashed;
@@ -157,7 +143,6 @@ div{
 .contBotones{
   position: relative;
 
-
 }
 
 
@@ -179,77 +164,52 @@ div{
 
 .buttonM {
   display: inline-block;
-  width: 180px;
-  height: 60px;
-  padding: 10px 25px;
-  font-family: fantasy;
+  width: 100%;
+  height: auto;
+  padding: 15px 25px;
   font-size: 20px;
   cursor: pointer;
-  white-space: normal;
+  text-align: center;
   text-decoration: none;
   outline: none;
-  color: black;
-  background-color: #BACDD0;
+  color: #fff;
+  background-color: #1A5276;
   border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-
-
-.buttonS {
-  display: inline-block;
-  width: 180px;
-  height: 60px;
-  padding: 10px 25px;
-  font-family: fantasy;
-  font-size: 20px;
-  cursor: pointer;
-  white-space: normal;
-  text-decoration: none;
-  outline: none;
-  color: black;
-  background-color: #BACDD0;
-  border-color: red;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
 
 .buttonI {
   display: inline-block;
-
-  padding: 10px 25px;
-  font-family: fantasy;
-  font-size: 15px;
+  width: 33%;
+  height: auto;
+  padding: 10px 20px;
+  font-size: 20px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   float: left;
   outline: none;
-  color: black;
-  background-color: #BACDD0;
+  color: #fff;
+  background-color: #1A5276;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
-  margin: 1px;
 }
 
-
-
 .btnForm {
-  display: inline-block;
-  width: 180px;
-  height: 60px;
-  padding: 10px 25px;
-  font-family: fantasy;
-  font-size: 20px;
-  cursor: pointer;
-  white-space: normal;
-  text-decoration: none;
   float: right;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
   outline: none;
-  color: black;
-  background-color: #BACDD0;
-  margin: 2px;
+  color: #fff;
+  background-color: #1A5276;
+  border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
@@ -294,7 +254,7 @@ div{
 
 .form1{
 	width: 180px;
-	height: 450px;
+	height: 300px;
 	padding: 20px;
 	border: 2px solid black;
 	border-radius: 20px;
@@ -305,7 +265,7 @@ div{
 
 .form2{
 	width: 180px;
-	height: 450px;
+	height: 300px;
 	padding: 20px;
 	border: 2px solid black;
 	border-radius: 20px;
@@ -316,7 +276,7 @@ div{
 .form3{
 
 	width: 180px;
-	height: 450px;
+	height: 300px;
 	padding: 20px;
 	border: 2px solid black;
 	float: right;
@@ -324,35 +284,6 @@ div{
 	margin: auto;
 }
 
-.buttonTC{
-  position: relative;
-  top: 60px;
-  display: inline-block;
-  width: 180px;
-  height: 60px;
-  padding: 10px 25px;
-  font-family: fantasy;
-  font-size: 20px;
-  cursor: pointer;
-  white-space: normal;
-  text-decoration: none;
-  outline: none;
-  color: black;
-  background-color: #BACDD0;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-
-}
-
-.largerCheckbox {
-
-    width: 20px;
-    height: 20px;
-}
-.txtAlerta{
-  font-family: georgia;
-  font-size: 115px;
-}
 
 .divC1{
   width: 180px;
@@ -386,10 +317,8 @@ div{
 }
 .textoLogo{
   position: absolute;
-  top: -50px;
+  top: -9%;
   left: 1%;
-  -webkit-text-stroke: 0.5px black;
-color: white;
 }
 .divFondo{
   position: absolute;

@@ -4,20 +4,22 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <link rel="stylesheet" type="text/css" href="style.css">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <h1 style="text-align:center"><img src="Imagenes\dacc0d9c-5f4f-480b-a283-83207c747bbd 2.jpg" class="logo" alt="">   Sistemas de Control de Cuarteles - Cuerpo bomberos de Machali</h1>
+
+  <?php require("Top.php") ?>
+
 
   <body>
 
+<?php
+    require("Menu.php"); ?>
 
-
-<div class="contenedorTablas">
-
+    <div class="divFondoTablas">
+              <h3 style="text:center">Bomberos Tercera Compañía  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Disponibles : 10 Bomberos</h3>
     <?php
 
-    require("Menu.php");
     $datosBomberos= array("Bombero1"=>array("Nombre"=>"Denis",
                                        "Apellido"=>"Fuentes",
                                        "Bombero"=>"Profesional",
@@ -73,17 +75,13 @@
                                                                                                                                                                 "Bombero"=>"Profesional",
                                                                                                                                                                 "Tipo"=>"Agua-Rescate-Escala",
                                                                                                                                                                 "Maquinista"=>"Maquinista")
-                                                                                                                                          
+
 
   );
-
-
     for($i = 0;$i<count($datosBomberos);$i++){
       $suma=1+$i;
       $variable="Bombero".$suma;
-
-
-          echo "<table class='tablaUsuarios'>
+          echo "<table class='tablaUsuarioss'>
                 <tr>
                   <td> <img width='100%'src='Imagenes/userBombero.png'></td>
                 </tr>
@@ -101,16 +99,9 @@
                 <tr>
                   <td>Maquinista</td>
                 </tr>
-
-
               </table>";
 
-
-
     }
-
-
-
     ?>
 
     </div>

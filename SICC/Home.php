@@ -4,16 +4,13 @@
 
     <title>SICC BOMBEROS</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <?php require("Top.php") ?>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-    .div {
-    	margin-bottom:0;
-    }
-    </style>
-   <body>
-    <h1 style="text-align:center"><img src="Imagenes\dacc0d9c-5f4f-480b-a283-83207c747bbd 2.jpg" class="logo" alt="">   Sistemas de Control de Cuarteles - Cuerpo bomberos de Machali</h1>
+
+  <?php
+      require("Menu.php"); ?>
+
+      <div class="divFondo">
 
 <div class="slider">
   <ul>
@@ -24,16 +21,6 @@
   </ul>
 </div>
 
-<div class="contenedorMenu">
-    <input type="submit" value="Ingresar" class="button" onclick="location.href='Ingreso.php'"  />
-    <br><br><br><br>
-    <input type="submit" value="Central de Alarmas" class="button"  onclick="location.href='Alerta.php'" />
-    <br><br><br><br>
-    <input type="submit" value="Cuartel Primera" class="button"  onclick="location.href='Primera.php'" />
-    <br><br><br><br>
-    <input type="submit" value="Cuartel Segunda" class="button"  onclick="location.href='Segunda.php'" />
-    <br><br><br><br>
-    <input type="submit" value="Cuartel Tercera" class="button"  onclick="location.href='Tercera.php'" />
 </div>
 
 
