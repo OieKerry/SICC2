@@ -53,10 +53,14 @@
       echo "<h4> Maquinista :".$maquinista. "</h4>" ;
       echo "<h4> Imagen :".$imagen. "</h4>" ;
 
-      $bomberoDAO = new BomberoDAO();
-      $bombero = new Bombero($nombre,$apellido,$run,$fechaNac,$domicilio,$telefono,$compañia);
-      $bomberoDAO->ingresarBombero($bombero);
       
+
+
+      //
+      // $bomberoDAO = new BomberoDAO();
+      // $bombero = new Bombero($nombre,$apellido,$run,$fechaNac,$domicilio,$telefono,$compañia);
+      // $bomberoDAO->ingresarBombero($bombero);
+      //
 
 
 
