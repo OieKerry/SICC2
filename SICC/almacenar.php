@@ -1,9 +1,11 @@
 
-<?php require("Top.php") ?>
+<?php require("Top.php");
+      require("Menu.php");
 
+      include "Datos/BomberoDAO.php";
+      include "Clases/Bombero.php";
 
-<?php
-  require("Menu.php"); ?>
+   ?>
 
   <div class="divFondo">
 
@@ -14,8 +16,8 @@
   //DATOS A Ingresar
   $nombre= $_POST['nombre'];
   $apellidos=$_POST['apellidos'];
-  $run=$_POST['run'];
-  $fechaNac=$_POST['fechaNac'];
+  $run=$_POST['rut'];
+  $fechaNac=$_POST['fechanac'];
   $domicilio=$_POST['domicilio'];
   $telefono=$_POST['telefono'];
   $isapre=$_POST['isapre'];
@@ -29,7 +31,13 @@
   $imagen=$_POST['archivoImagen'] ;
 
 
+
+
   if(isset($_POST['btnIngresar'])){
+
+
+
+
       echo "<h4> Nombre :".$nombre. " ".$apellidos. "</h4>" ;
       echo "<h4> RUN  :".$run. "</h4>" ;
       echo "<h4> Fecha de Nacimiento :".$fechaNac. "</h4>" ;
@@ -44,6 +52,14 @@
       echo "<h4> Especialidad :".$especialidad. "</h4>" ;
       echo "<h4> Maquinista :".$maquinista. "</h4>" ;
       echo "<h4> Imagen :".$imagen. "</h4>" ;
+
+      $bomberoDAO = new BomberoDAO();
+      $bombero = new Bombero($nombre,$apellido,$run,$fechaNac,$domicilio,$telefono,$compañia);
+      $bomberoDAO->ingresarBombero($bombero);
+      
+
+
+
 
 
   }

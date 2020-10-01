@@ -27,7 +27,7 @@
                   </div>
                   <div class="input-info">
                       <label class="info-label">R.U.N.:</label>
-                      <input type="text" name="r.u.n.">
+                      <input type="text" name="rut">
                   </div>
                   <div class="input-info">
                       <label class="info-label">Fecha de Nacimiento:</label>
@@ -75,6 +75,12 @@
 
                 Compañia : <select name="Compañia">
                              <option selected value="0"> Elige una opción </option>
+                             <?php
+                             
+
+
+
+                              ?>
                              <option value="1">Primera Compañia</option>
                              <option value="2">Segunda Compañia</option>
                              <option value="3">Tercera Compañia</option>

@@ -15,8 +15,9 @@
 <?php
     require("Menu.php"); ?>
 
+
     <div class="divFondoTablas">
-              <h3 style="text:center">Bomberos Tercera Compañía  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <h3 style="text:center">Bomberos Tercera Compañía  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Disponibles : 10 Bomberos</h3>
     <?php
 
@@ -83,7 +84,7 @@
       $variable="Bombero".$suma;
           echo "<table class='tablaUsuarioss'>
                 <tr>
-                  <td> <img width='100%'src='Imagenes/userBombero.png'></td>
+                  <td> <img class='fotoBombero' src='Fotos/rut.jpg'></td>
                 </tr>
                 <tr>
 

@@ -42,7 +42,7 @@
 
 
 				<h4>Bomberos Disponibles : 10 bomberos disponibles</h4>
-				<button class="btnForm"  onclick="location.href='Alerta.php'" >Ver Todo</button>
+				<button class="btnForm"  onclick="location.href='Listado.php'" >Ver Todo</button>
 				<button class="btnForm"  onclick="location.href='Alerta.php'" >Tonos Cuartel</button>
 
 
