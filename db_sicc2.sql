@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 29-09-2020 a las 17:46:42
+-- Tiempo de generación: 03-10-2020 a las 02:31:45
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 7.4.1
 
@@ -27,11 +27,6 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `tbl_bombero`
 --
-
-create database db_sicc2;
-use db_sicc2;
-
-
 
 CREATE TABLE `tbl_bombero` (
   `id_bombero` int(11) NOT NULL,
@@ -60,24 +55,12 @@ CREATE TABLE `tbl_cargo` (
 --
 
 INSERT INTO `tbl_cargo` (`id_cargo`, `nombre`) VALUES
-(1, 'Bombero V'),
-(2, 'Bombero H'),
+(1, 'Bombero V.'),
+(2, 'Bombero H.'),
 (3, 'Ayudante'),
 (4, 'Secretario'),
 (5, 'Tesorero'),
-(6, 'Director'),
-(7, 'Capitan'),
-(8, 'Teniente 1°'),
-(9, 'Teniente 2°'),
-(10, 'Teniente 3°'),
-(11, 'Comandante 1°'),
-(12, 'Comandante 2°'),
-(13, 'Inspector C°'),
-(14, 'Ayudante C°'),
-(15, 'Secretario Grl.'),
-(16, 'Vicesuperintendente'),
-(17, 'Superintendente'),
-(18, 'Tesorero Grl');
+(6, 'Director');
 
 -- --------------------------------------------------------
 
@@ -101,6 +84,27 @@ CREATE TABLE `tbl_compania` (
   `id_compania` int(11) NOT NULL,
   `nombre` varchar(20) DEFAULT NULL,
   `ubicacion` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tbl_compania`
+--
+
+INSERT INTO `tbl_compania` (`id_compania`, `nombre`, `ubicacion`) VALUES
+(1, 'Primera compañía', 'Machalí 1'),
+(2, 'Segunda compañía', 'Machalí 2'),
+(3, 'Tercera compañía', 'Machalí 3');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tbl_cuartel`
+--
+
+CREATE TABLE `tbl_cuartel` (
+  `id_cuartel` int(11) NOT NULL,
+  `nombre` varchar(45) DEFAULT NULL,
+  `id_compania` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -134,6 +138,15 @@ CREATE TABLE `tbl_especialidad` (
   `nombre` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `tbl_especialidad`
+--
+
+INSERT INTO `tbl_especialidad` (`id_especialidad`, `nombre`) VALUES
+(1, 'Agua'),
+(2, 'Agua - Rescate'),
+(3, 'Agua - Rescate - Escala');
+
 -- --------------------------------------------------------
 
 --
@@ -144,6 +157,16 @@ CREATE TABLE `tbl_grupo_sanguineo` (
   `id_grupo_sanguineo` int(11) NOT NULL,
   `nombre` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tbl_grupo_sanguineo`
+--
+
+INSERT INTO `tbl_grupo_sanguineo` (`id_grupo_sanguineo`, `nombre`) VALUES
+(1, 'A'),
+(2, 'B'),
+(3, 'AB'),
+(4, 'O');
 
 -- --------------------------------------------------------
 
@@ -176,6 +199,14 @@ CREATE TABLE `tbl_prevision` (
   `nombre` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `tbl_prevision`
+--
+
+INSERT INTO `tbl_prevision` (`id_prevision`, `nombre`) VALUES
+(1, 'Isapre'),
+(2, 'Fonasa');
+
 -- --------------------------------------------------------
 
 --
@@ -199,8 +230,9 @@ CREATE TABLE `tbl_registro_bombero` (
 CREATE TABLE `tbl_registro_tono` (
   `id_tono` int(11) NOT NULL,
   `nombre` varchar(45) DEFAULT NULL,
-  `fecha` datetime DEFAULT NULL,
-  `id_compania` int(11) NOT NULL
+  `fecha_hora` datetime DEFAULT NULL,
+  `id_carro` int(11) DEFAULT NULL,
+  `id_cuartel` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -232,6 +264,13 @@ ALTER TABLE `tbl_carros`
 --
 ALTER TABLE `tbl_compania`
   ADD PRIMARY KEY (`id_compania`);
+
+--
+-- Indices de la tabla `tbl_cuartel`
+--
+ALTER TABLE `tbl_cuartel`
+  ADD PRIMARY KEY (`id_cuartel`),
+  ADD KEY `fk_tbl_registro_tono_tbl_compania1_idx` (`id_compania`);
 
 --
 -- Indices de la tabla `tbl_cursos`
@@ -280,8 +319,7 @@ ALTER TABLE `tbl_registro_bombero`
 -- Indices de la tabla `tbl_registro_tono`
 --
 ALTER TABLE `tbl_registro_tono`
-  ADD PRIMARY KEY (`id_tono`),
-  ADD KEY `fk_tbl_registro_tono_tbl_compania1_idx` (`id_compania`);
+  ADD PRIMARY KEY (`id_tono`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -297,13 +335,13 @@ ALTER TABLE `tbl_bombero`
 -- AUTO_INCREMENT de la tabla `tbl_cargo`
 --
 ALTER TABLE `tbl_cargo`
-  MODIFY `id_cargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_cargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_compania`
 --
 ALTER TABLE `tbl_compania`
-  MODIFY `id_compania` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_compania` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_cursos`
@@ -315,13 +353,13 @@ ALTER TABLE `tbl_cursos`
 -- AUTO_INCREMENT de la tabla `tbl_especialidad`
 --
 ALTER TABLE `tbl_especialidad`
-  MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_grupo_sanguineo`
 --
 ALTER TABLE `tbl_grupo_sanguineo`
-  MODIFY `id_grupo_sanguineo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_grupo_sanguineo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_info_personal`
@@ -333,13 +371,19 @@ ALTER TABLE `tbl_info_personal`
 -- AUTO_INCREMENT de la tabla `tbl_prevision`
 --
 ALTER TABLE `tbl_prevision`
-  MODIFY `id_prevision` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_prevision` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_registro_bombero`
 --
 ALTER TABLE `tbl_registro_bombero`
   MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `tbl_registro_tono`
+--
+ALTER TABLE `tbl_registro_tono`
+  MODIFY `id_tono` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -358,6 +402,12 @@ ALTER TABLE `tbl_carros`
   ADD CONSTRAINT `id_compania` FOREIGN KEY (`id_compania`) REFERENCES `tbl_compania` (`id_compania`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
+-- Filtros para la tabla `tbl_cuartel`
+--
+ALTER TABLE `tbl_cuartel`
+  ADD CONSTRAINT `fk_tbl_registro_tono_tbl_compania1` FOREIGN KEY (`id_compania`) REFERENCES `tbl_compania` (`id_compania`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Filtros para la tabla `tbl_info_personal`
 --
 ALTER TABLE `tbl_info_personal`
@@ -373,12 +423,6 @@ ALTER TABLE `tbl_info_personal`
 --
 ALTER TABLE `tbl_registro_bombero`
   ADD CONSTRAINT `fk_tbl_bombero_compania_tbl_bombero1` FOREIGN KEY (`id_bombero`) REFERENCES `tbl_bombero` (`id_bombero`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `tbl_registro_tono`
---
-ALTER TABLE `tbl_registro_tono`
-  ADD CONSTRAINT `fk_tbl_registro_tono_tbl_compania1` FOREIGN KEY (`id_compania`) REFERENCES `tbl_compania` (`id_compania`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
