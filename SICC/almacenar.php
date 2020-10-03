@@ -4,6 +4,8 @@
 
       include "Datos/BomberoDAO.php";
       include "Clases/Bombero.php";
+      include "Datos/InfoPersonalDAO.php";
+      include "Clases/InfoPersonal.php";
 
    ?>
 
@@ -20,22 +22,25 @@
   $fechaNac=$_POST['fechanac'];
   $domicilio=$_POST['domicilio'];
   $telefono=$_POST['telefono'];
-  $isapre=$_POST['isapre'];
-  $gurpoSanguineo=$_POST['grupoSanuineo'];
+  $prevision=$_POST['prevision'];
+  $gurpoSanguineo=$_POST['grupoSanguineo'];
   $familiarContacto=$_POST['familiarContacto'];
   $telefonoContacto=$_POST['telefonoContacto'];
   $compañia=$_POST['Compañia'];
   $cargo=$_POST['cargo'];
   $especialidad=$_POST['especialidad'];
   $maquinista=$_POST['maquinista'];
-  $imagen=$_POST['archivoImagen'] ;
-
+  $curso=$_POST['curso'];
 
 
 
   if(isset($_POST['btnIngresar'])){
+    
 
-
+    $foto = $_FILES["archivoImagen"]["name"];
+    $ruta = $_FILES["archivoImagen"]["tmp_name"];
+    $destino = "Fotos/".$run.".jpg";
+    copy($ruta,$destino);
 
 
       echo "<h4> Nombre :".$nombre. " ".$apellidos. "</h4>" ;
@@ -43,35 +48,33 @@
       echo "<h4> Fecha de Nacimiento :".$fechaNac. "</h4>" ;
       echo "<h4> Domicilio :".$domicilio. "</h4>" ;
       echo "<h4> Teléfono :".$telefono. "</h4>" ;
-      echo "<h4> Isapre :".$isapre. "</h4>";
+      echo "<h4> Prevision :".$prevision. "</h4>";
       echo "<h4> Grupo Sanguineo :".$gurpoSanguineo. "</h4>" ;
       echo "<h4> Familiar de Contacto :".$familiarContacto. "</h4>" ;
       echo "<h4> Telefono de Contacto :".$telefonoContacto. "</h4>";
       echo "<h4> Compañía :".$compañia. "</h4>" ;
       echo "<h4> Cargo :".$cargo. "</h4>" ;
       echo "<h4> Especialidad :".$especialidad. "</h4>" ;
-      echo "<h4> Maquinista :".$maquinista. "</h4>" ;
-      echo "<h4> Imagen :".$imagen. "</h4>" ;
+      echo "<h4> Cruso :".$curso. "</h4>" ;
+      echo "<h4> Directorio de la foto :".$destino. "</h4>" ;
 
-      
+      $bomberoDAO = new BomberoDAO();
+      if($bomberoDAO->siExiste($run)){
+        echo   ' <script languaje="javascript">alert("El Bombero ya se encuentra ingresado");</script>  ' ;
+            header("Location:Ingreso.php");
+      }else{
 
-
-      //
-      // $bomberoDAO = new BomberoDAO();
-      // $bombero = new Bombero($nombre,$apellido,$run,$fechaNac,$domicilio,$telefono,$compañia);
-      // $bomberoDAO->ingresarBombero($bombero);
-      //
-
-
-
-
+      $bombero = new Bombero($nombre,$apellidos,$run,$fechaNac,$domicilio,$telefono,$compañia);
+      $bomberoDAO->ingresarBombero($bombero);
+      $id_bombero = $bomberoDAO->getID($run);
+      $info = new InfoPersonal($familiarContacto,$telefonoContacto,$maquinista,$destino,$id_bombero,$especialidad,$cargo,$curso,$prevision,$gurpoSanguineo);
+      $infoDAO = new InfoPersonalDAO();
+      $infoDAO->insertar($info);
+    }
 
   }
-  if(isset($_POST['btnVolver'])){
+  else{
     header("Location:Home.php");
-  }
-  if(isset($_POST['btnLimpiar'])){
-    header("Location:Ingreso.php");
   }
 
 

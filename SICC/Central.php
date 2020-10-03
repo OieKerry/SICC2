@@ -12,9 +12,9 @@
 
 <?php
     require("Menu.php");
+            require "Datos/BomberoDAO.php";
 
-
-
+		$bombero = new BomberoDAO();
 
 
 		?>
@@ -25,19 +25,26 @@
 				<h2 align="center">Capacidad de Recursos de Bomberos</h2>
 				<fieldset class="divC1">
 					<legend>Primera Compañia</legend>
-					Victor Chamorro - Operativo <br>
-					Sofia Carrasco - Inicial <br>
+					<?php
 
-					Raúl Rios - Inicial <br>
+					$bombero->listaCompania("1");
+
+					 ?>
 				</fieldset>
 				<fieldset class="divC2">
 					<legend>Tercera Compañia</legend>
-					Rodrigo Lopez - Operativo
+					<?php
+
+				$bombero->listaCompania("3");
+
+					 ?>
 				</fieldset>
 				<fieldset class="divC3">
 					<legend>Segunda Compañia</legend>
-					Diego Valdes - Inicial <br>
-					Marcos Lopez - Operativo
+					<?php
+				$bombero->listaCompania("2");
+
+					 ?>
 				</fieldset>
 
 
