@@ -31,7 +31,15 @@
 
 					 ?>
 				</fieldset>
-				<fieldset class="divC2">
+
+				<fieldset class="divC1">
+					<legend>Segunda Compañia</legend>
+					<?php
+				$bombero->listaCompania("2");
+
+					 ?>
+				</fieldset>
+				<fieldset class="divC1">
 					<legend>Tercera Compañia</legend>
 					<?php
 
@@ -39,15 +47,7 @@
 
 					 ?>
 				</fieldset>
-				<fieldset class="divC3">
-					<legend>Segunda Compañia</legend>
-					<?php
-				$bombero->listaCompania("2");
-
-					 ?>
-				</fieldset>
-
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 				<h4>Bomberos Disponibles : 10 bomberos disponibles</h4>
 				<button class="btnForm"  onclick="location.href='Listado.php'" >Ver Todo</button>
 				<button class="btnForm"  onclick="location.href='Alerta.php'" >Tonos Cuartel</button>

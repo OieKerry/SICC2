@@ -5,8 +5,6 @@ class Bombero{
   private $nombre,$apellido,$run,$fechaNac,$domicilio,$telefono,$id,$idComp;
 
 
-
-
   public function __construct($nombre, $apellidos, $run, $fechaNac, $domicilio, $telefono, $idComp){
     $this->nombre = $nombre;
     $this->apellido = $apellidos;
@@ -16,6 +14,7 @@ class Bombero{
     $this->telefono = $telefono;
     $this->idComp = $idComp;
   }
+
 
   public function __set($propiedad,$valor){
 

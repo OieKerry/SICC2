@@ -14,7 +14,7 @@
       require("Menu.php"); ?>
 
       <div class="divFondo">
-
+          <input type="button" onclick="window.location.href='Central.php'" class="btnForm" value="volver">
         				<h2 align="center">Tonos de Alerta a Cuarteles</h2>
         <form method="get" action="respuesta.php" class="form1">
           <h2 style="text-align:center"> Primera Compañía </h2>
