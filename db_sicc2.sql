@@ -21,6 +21,9 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `db_sicc2`
 --
+CREATE DATABASE db_sicc2;
+USE db_sicc2;
+
 
 -- --------------------------------------------------------
 
