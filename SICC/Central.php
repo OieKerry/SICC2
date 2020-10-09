@@ -48,7 +48,7 @@
 					 ?>
 				</fieldset>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-				<h4>Bomberos Disponibles : 10 bomberos disponibles</h4>
+				<h4>Disponibles : <?php echo $bombero->totalBomberos()  ?> Bomberos</h4>
 				<button class="btnForm"  onclick="location.href='Listado.php'" >Ver Todo</button>
 				<button class="btnForm"  onclick="location.href='Alerta.php'" >Tonos Cuartel</button>
 

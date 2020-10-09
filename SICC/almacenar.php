@@ -46,7 +46,15 @@
         $foto = $_FILES["archivoImagen"]["name"];
         $ruta = $_FILES["archivoImagen"]["tmp_name"];
         $destino = "Fotos/".$run.".jpg";
-        copy($ruta,$destino);
+
+        if (file_exists($ruta)) {
+            copy($ruta,$destino);
+        } else {
+          $destino = "Fotos/none.jpg";
+          echo '<script languaje="javascript">alert("No se ha ingresado la foto, pero puede ser modificada despues");</script>';
+        }
+
+
 
 
           echo "<h4> Nombre :".$nombre. " ".$apellidos. "</h4>" ;
