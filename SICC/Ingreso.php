@@ -5,118 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <?php require("Top.php") ?>
+    <?php require("Top.php");
+          require("Menu.php");
+          require ("Datos/ListasDAO.php");
+            $listas = new ListasDAO(); ?>
 
-
-<?php
-
-    require("Menu.php"); ?>
-
-        <form class="divFondo" action="almacenar.php" method="post" autocomplete="off">
-              <h2 align="center">Ingreso de Nuevo Bombero</h2>
+        <form class="divFondo" action="almacenar.php" method="post" autocomplete="off" enctype="multipart/form-data">
+          <h2 align="center">Ingreso de Nuevo Bombero</h2>
             <fieldset class="contPersonal2">
                 <legend>Datos Personales</Legend>
 
                   <div class="input-info">
                       <label class="info-label">Nombre:</label>
-                      <input type="text" name="nombre">
+                      <input type="text" pattern="[^'\x22]+" name="nombre"  required>
                   </div>
                   <div class="input-info">
                       <label class="info-label">Apellidos:</label>
-                      <input type="text" name="apellidos">
+                      <input type="text" pattern="[^'\x22]+" name="apellidos"  required>
                   </div>
                   <div class="input-info">
-                      <label class="info-label">R.U.N.:</label>
-                      <input type="text" name="rut">
+                      <label class="info-label" >R.U.N.:</label>
+                      <input type="text" pattern="\d{3,8}-[\d|kK]{1}" title="Debe ser un Rut válido" name="rut" required>
                   </div>
                   <div class="input-info">
                       <label class="info-label">Fecha de Nacimiento:</label>
-                      <input type="date" name="fechanac">
+                      <input type="date"  pattern="[^'\x22]+"name="fechanac"  required>
                   </div>
                   <div class="input-info">
                       <label class="info-label">Domicilio:</label>
-                      <input type="text" name="domicilio">
+                      <input type="text" pattern="[^'\x22]+" name="domicilio"  required>
                   </div>
                   <div class="input-info">
                       <label class="info-label">Telefono:</label>
-                      <input type="text" name="telefono">
+                      <input type="text" pattern="[^'\x22]+" name="telefono" pattern="[0-9]+"  required>
                   </div>
 
 
-
-            <br>
-            <br><br>
-
             <div class="input-info">
-                <label class="info-label">Isapre:</label>
-                <input type="text" name="isapre">
+                <label class="info-label">Prevision:</label>
+                <select name="prevision" required>
+                         <?php
 
-            </div>
+                             $listas->listarPrevision("0");
+                           ?>
+                        </select>
+                </div>
 
-            <div class="input-info">
-                <label class="info-label">Grupo Sanguineo:</label>
-                <input type="text" name="grupoSanuineo" >
-            </div>
+              <div class="input-info">
+                  <label class="info-label">Grupo Sanguineo:</label>
+                      <select name="grupoSanguineo" required>
+                               <?php
+
+                                   $listas->listarGS("0");
+                                 ?>
+                              </select>
+              </div>
+
 
             <div class="input-info">
                 <label class="info-label">Familiar de Contacto:</label>
-                <input type="text"name="familiarContacto">
+                <input type="text" pattern="[^'\x22]+" name="familiarContacto"  required>
             </div>
 
             <div class="input-info">
                 <label class="info-label">Telefono de Contacto:</label>
-                <input type="text"name="telefonoContacto">
+                <input type="text"name="telefonoContacto" pattern="[0-9]{7,10}"  required>
             </div>
 
           </fieldset>
 
-            <fieldset class="contPersonal3">
+
+
+
+
+
+            <fieldset class="contPersonal2">
                 <legend>Datos Bombero</legend>
 
-                Compañia : <select name="Compañia">
-                             <option selected value="0"> Elige una opción </option>
+
+                <div class="input-info">
+                    <label class="info-label">Compañía:</label>
+                    <select name="Compañia" required>
+                                 <?php
+
+                                     $listas->listarComp("0");
+                                   ?>
+                              </select>
+                </div>
+                <div class="input-info">
+                    <label class="info-label">Cargo:</label>
+                    <select name="cargo" size="0" required>
                              <?php
-                             
 
-
-
-                              ?>
-                             <option value="1">Primera Compañia</option>
-                             <option value="2">Segunda Compañia</option>
-                             <option value="3">Tercera Compañia</option>
+                                 $listas->listarCargos("0");
+                               ?>
                             </select>
-              <br><br>
-                Cargo : <select name="cargo">
-                             <option selected value="0"> Elige una opción </option>
-                             <option value="1">Primera Compañia</option>
-                             <option value="2">Segunda Compañia</option>
-                             <option value="3">Tercera Compañia</option>
-                            </select>
-            <br><br>
-                Especialidad : <select name="especialidad">
-                             <option selected value="0"> Elige una opción </option>
-                             <option value="1">Primera Compañia</option>
-                             <option value="2">Segunda Compañia</option>
-                             <option value="3">Tercera Compañia</option>
-                            </select>
-                          <br><br>    Maquinista : <select name="maquinista">
-                             <option selected value="0"> Elige una opción </option>
-                             <option value="1">Primera Compañia</option>
-                             <option value="2">Segunda Compañia</option>
-                             <option value="3">Tercera Compañia</option>
-                            </select>
-            <br><br><br>
 
-            Fotografía  <input type="file" name="archivoImagen">
+          </div>
+          <div class="input-info">
+              <label class="info-label">Especialidad:</label>
+              <select name="especialidad" required>
+                             <?php
 
-          <br><br><br><br><br><br><br><br><br><br>
+                                 $listas->listarEspecialidades("0");
+                               ?>
+                            </select>
+                          </div>
+            <div class="input-info">
+                      <label class="info-label">Curso</label>
+                      <select name="curso" required>
+                     <?php
+                         $listas->listarCursos("0");
+                       ?>
+                  </select>
+                </div>
+
+                <div class="input-info">
+                          <label class="info-label">Maquinista</label>
+                          <p>Si</p>
+                          <input type="radio" name="maquinista" value="si">
+                          <p>No</p>
+                      <input type="radio" name="maquinista" value="no">
+                    </div>
+                    Fotografía  <input type="file" name="archivoImagen" id="archivoInput" accept="image/x-png,image/jpeg" onchange="return validaEXT()">
+            <div id="visorArchivo">
+
+            </div>
+          <br>
               <div class="contBotones">
-                  <input type="submit" class="buttonI" name="btnIngresar" value="Ingresar"> <input type="submit" class="buttonI" name="btnVolver" value="Volver"> <input type="submit" class="buttonI" name="btnLimpiar" value="Limpiar">
-
+                  <input type="submit" class="buttonI" name="btnIngresar" value="Ingresar">
+                   <input type="submit" class="buttonI"  onclick="window.location.href='Home.php'" name="btnVolver" value="Volver"> <input type="reset" class="buttonI" name="btnLimpiar" value="Limpiar">
               </div>
+
 <br>
 </fieldset>
 
+<script type="text/javascript">
+  function validaEXT(){
+    var archivoInput = document.getElementById("archivoInput");
+    var archivoRuta = archivoInput.value;
+    var extPermitidas = /(.png|.jpg|.jpeg)$/i;
+    if(!extPermitidas.exec(archivoRuta)){
+      alert('Archivo no permitido, verifique que sea una imagen ');
+      archivoInput.value="";
+      return false;
+    }else{
+      if(archivoInput.files && archivoInput.files[0]){
+        var visor = new FileReader();
+        visor.onload=function(e){
+          document.getElementById('visorArchivo').innerHTML=
+          '<embed src="'+e.target.result+'" width="140" height="160">  ';
+        };
+        visor.readAsDataURL(archivoInput.files[0]);
+      }
+    }
+
+
+  }
+</script>
 
 
         </form>

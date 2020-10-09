@@ -6,13 +6,39 @@
   </head>
   <body>
 
-        <?php require("Top.php") ?>
+        <?php require("Top.php");
+
+          require("Menu.php");
+          require "Datos/BomberoDAO.php";
+
+      		$bombero = new BomberoDAO();
+
+           ?>
+
+          <div class="divFondo" id="divListado">
 
 
-      <?php
-          require("Menu.php"); ?>
+          <input type="button" onclick="window.location.href='Central.php'" class="btnForm" value="volver">
+            <h2 align="center">Listado de Bomberos </h2>
+            				<fieldset class="divListado">
+            					<legend>Primera Compañia</legend>
+            					<?php
+                			$bombero->listaBomberosCompania("1");
+            					 ?>
+            				</fieldset>
+            				<fieldset class="divListado">
+            					<legend>Segunda Compañia</legend>
+            					<?php
 
-          <div class="divFondo">
+        			$bombero->listaBomberosCompania("2");
+            					 ?>
+            				</fieldset>
+            				<fieldset class="divListado">
+            					<legend>Tercera Compañia</legend>
+            					<?php
+        			$bombero->listaBomberosCompania("3");
+            					 ?>
+            				</fieldset>
 
   </body>
 </html>
