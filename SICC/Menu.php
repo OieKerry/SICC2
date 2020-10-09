@@ -20,7 +20,7 @@
         <input type="submit" value="Cuartel Tercera" class="buttonM" onclick=location.href="Tercera.php" />
     </div>
     ';
-  }elseif($host=="/SICC/Central.php"){
+  }elseif($host=="/SICC/Central.php" || $host=="/SICC/Listado.php" || $host=="/SICC/Alerta.php"){
       echo'
       <div class="contenedorMenu">
           <input type="submit" value="Ingreso Bombero" class="buttonM" onclick=location.href="Ingreso.php"  />
